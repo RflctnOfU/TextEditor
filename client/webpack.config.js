@@ -18,23 +18,26 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      new InjectManifest({
-        swSrc: './src-sw.js',
-        swDest: 'service-worker.js',
-      }),
       new HtmlWebpackPlugin({
         template: './index.html',
         title: 'Just Another Text Editor',
       }),
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'service-worker.js',
+      }),
+
       new WebpackPwaManifest({
         short_name: "JATE",
         name: "Just Another Text Editor",
         description: "Text Editor on the Go!",
         background_color: '#333333',
         theme_color: '#333333',
+        id: '/client/dist',
         start_url: './',
         publicPath: './',
-        // fingerprints, inject
+        fingerprints: true,
+        inject: true,
         icons: [
           {
             src: path.resolve("./src/images/logo.png"),
