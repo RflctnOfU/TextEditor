@@ -19,7 +19,7 @@ module.exports = () => {
     },
     plugins: [
       new InjectManifest({
-        swSrc: './src/sw.js',
+        swSrc: './src-sw.js',
         swDest: 'service-worker.js',
       }),
       new HtmlWebpackPlugin({
@@ -37,7 +37,7 @@ module.exports = () => {
         // fingerprints, inject
         icons: [
           {
-            src: path.resolve('assets/images/logo.png'),
+            src: path.resolve("./src/images/logo.png"),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
           },
