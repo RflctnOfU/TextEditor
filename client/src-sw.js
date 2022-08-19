@@ -29,10 +29,7 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 // TODO: Implement asset caching
 registerRoute(
   warmStrategyCache,
-  // pageCache,
-  // offlineFallback,
   new StaleWhileRevalidate({
-    // pageCache,
     plugins: [
       new CacheableResponsePlugin({
         statuses: [0, 200]
@@ -42,4 +39,3 @@ registerRoute(
 
 );
 
-//19/20

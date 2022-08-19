@@ -5,7 +5,6 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
 // TODO: Add CSS loaders and babel to webpack.
-// activity 28
 module.exports = () => {
   return {
     mode: 'development',
@@ -34,7 +33,6 @@ module.exports = () => {
         description: "Text Editor on the Go!",
         background_color: '#333333',
         theme_color: '#333333',
-        // id: '/client/dist',
         start_url: './',
         publicPath: './',
         fingerprints: false,
