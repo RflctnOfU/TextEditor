@@ -1,5 +1,5 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackPwaManifest = require('webpack-pwa-manifest');
+
+
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
@@ -37,7 +37,7 @@ module.exports = () => {
         // id: '/client/dist',
         start_url: './',
         publicPath: './',
-        fingerprints: true,
+        fingerprints: false,
         inject: true,
         display: 'standalone',
         icons: [
