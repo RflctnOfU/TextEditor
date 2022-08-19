@@ -24,7 +24,7 @@ module.exports = () => {
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'service-worker.js',
+        swDest: 'src-sw.js',
       }),
 
       new WebpackPwaManifest({
@@ -33,11 +33,12 @@ module.exports = () => {
         description: "Text Editor on the Go!",
         background_color: '#333333',
         theme_color: '#333333',
-        id: '/client/dist',
+        // id: '/client/dist',
         start_url: './',
         publicPath: './',
         fingerprints: true,
         inject: true,
+        display: 'standalone',
         icons: [
           {
             src: path.resolve("./src/images/logo.png"),
